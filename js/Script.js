@@ -56,9 +56,9 @@ $(document).ready(function () {
     var randomNumberArray = Array(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20);
 
     $(randomNumberArray).each(function (key,value) {
-    $("<img src='/images/"+key+".jpg'>").load(function () {
+    $("<img src='images/"+key+".jpg'>").load(function () {
         $("#slideshow figure").eq(key).css({
-            "background-image": "url(/images/"+key+".jpg)"
+            "background-image": "url(images/"+key+".jpg)"
         });
         if ($('body').doesExist()) {
 

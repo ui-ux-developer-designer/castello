@@ -17,7 +17,7 @@ body {
     overflow: hidden;
     position: relative;
     background-color: black;
-    background-image: url(/css/assets/loading.gif);
+    background-image: url(css/assets/loading.gif);
     background-repeat: no-repeat;
     background-position: center center;
 }
@@ -143,7 +143,7 @@ menu a.left {
     width: 50%;
     height: 100%;
     float: left;
-    cursor: url(/css/assets/left2.cur), auto;
+    cursor: url(css/assets/left2.cur), auto;
     opacity: .1;
     z-index: 1001;
 }
@@ -151,7 +151,7 @@ menu a.left {
 menu a.right {
     width: 50%;
     height: 100%;
-    cursor: url(/css/assets/right2.cur), auto;
+    cursor: url(css/assets/right2.cur), auto;
     float: right;
     opacity: .1;
     z-index: 1002;
@@ -160,7 +160,7 @@ menu a.right {
 
 #content {
     background-color: rgba(0, 0, 0, 0.7);
-    background-image: url(/css/assets/castello.png);
+    background-image: url(css/assets/castello.png);
     width: 72rem;
     height: 12rem;
     bottom: 0;
@@ -201,7 +201,7 @@ main.success {
 }
 
 main.loading {
-    background-image: url(/css/assets/loading.gif);
+    background-image: url(css/assets/loading.gif);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 17rem;
@@ -214,7 +214,7 @@ main.animating {
 
 
 main.error {
-    background-image: url(/css/assets/error.gif);
+    background-image: url(css/assets/error.gif);
     background-repeat: no-repeat;
     background-position: center 45%;
 }
