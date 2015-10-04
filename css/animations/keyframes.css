@@ -1,0 +1,174 @@
+@-webkit-keyframes capanimate {
+    0%, 35% {
+    opacity: 0;
+    }
+
+    60% {opacity: 0;
+   -webkit-transform: translateX(10%);
+    }
+
+}
+
+@-webkit-keyframes leftcapanimate {
+    0%, 35% {
+    opacity: 0;
+    }
+
+    60% {opacity: 0;
+   -webkit-transform: translateX(-10%);
+    }
+
+}
+    
+    
+@-webkit-keyframes animate {
+    0% {
+    opacity: 0;
+    }
+
+    25% {opacity: 0;
+   -webkit-transform: translateX(10%);
+    }
+
+    50% {
+        
+        
+    }
+
+    75% {
+    }
+
+    100% {
+    }
+}
+
+@-webkit-keyframes deanimate {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 1;
+    }
+
+    100% {
+       -webkit-transform: translateX(-10%);
+       opacity: 0;
+    }
+}
+
+
+@-webkit-keyframes leftanimate {
+    0% {
+    opacity: 0;
+    }
+
+    25% {opacity: 0;
+   -webkit-transform: translateX(-10%);
+    }
+
+    50% {
+        
+        
+    }
+
+    75% {
+    }
+
+    100% {
+    /*visibility: visible;*/
+    }
+}
+
+@-webkit-keyframes leftdeanimate {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 1;
+    }
+
+    100% {
+       -webkit-transform: translateX(10%);
+       opacity: 0;
+    }
+}
+
+
+
+
+/*FLY IN*/
+@-webkit-keyframes flyIn {
+    0% {
+        margin-top: -200px;
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    50% {
+        -webkit-transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes flyOut {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        -webkit-transform: translateY(20px);
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+        margin-top: -200px;
+    }
+}
+
+@keyframes flyIn {
+    0% {
+        margin-top: -200px;
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    50% {
+        -webkit-transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes flyOut {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        -webkit-transform: translateY(20px);
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+        margin-top: -200px;
+    }
+}

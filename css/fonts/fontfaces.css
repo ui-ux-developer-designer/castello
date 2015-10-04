@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Caviar Dreams';
+    src: url('Caviar Dreams.eot');
+    src: url('Caviar Dreams.eot?#iefix') format('embedded-opentype'),
+         url('Caviar Dreams.woff') format('woff'),
+         url('Caviar Dreams.ttf') format('truetype'),
+         url('Caviar Dreams.svg#Caviar Dreams') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Caviar Dreams';
+    src: url('Caviar Dreams Bold.eot');
+    src: url('Caviar Dreams Bold.eot?#iefix') format('embedded-opentype'),
+         url('Caviar Dreams Bold.woff') format('woff'),
+         url('Caviar Dreams Bold.ttf') format('truetype'),
+         url('Caviar Dreams Bold.svg#Caviar Dreams') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}

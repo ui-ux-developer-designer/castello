@@ -1,0 +1,528 @@
+html {
+    color: white;
+    background-color: black;
+    -webkit-user-select: none;
+    font-size: 62.5%;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: josefin-slab, serif;
+    font-family: 'Caviar Dreams';
+    font-size: 1.8rem;
+    overflow: hidden;
+    position: relative;
+    background-color: black;
+    background-image: url(/css/assets/loading.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+body, div, section, menu, button, figure, figcaption, header, h1, h2, h3, h4, h5, h6, p, canvas, nav, a, main, ul, li, form, input, textarea {
+    margin: 0;
+    padding: 0;
+}
+
+body, div, section, figure, figcaption, header, h1, h2, h3, h4, h5, h6, p, canvas, nav, a, main, ul, li, form, input, textarea {
+    display: block;
+}
+
+
+
+
+#slideshow {
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    perspective: 200;
+    -webkit-perspective: 200;
+    
+}
+
+#slideshow figure {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(/e2.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    visibility: hidden;
+}
+
+#slideshow figure.active {
+    -webkit-animation: animate .5s ease-out;
+    z-index: 1000;
+    visibility: visible;
+}
+
+#slideshow figure.leftactive {
+    -webkit-animation: leftanimate .5s ease-out;
+    z-index: 1000;
+    visibility: visible;
+}
+
+#slideshow figure figcaption {
+    visibility: hidden;
+}
+
+#slideshow figure.active figcaption {  
+    -webkit-animation: capanimate 1.5s cubic-bezier(.53,2,.17,1);
+    visibility: visible;
+}
+
+#slideshow figure.leftactive figcaption {  
+    -webkit-animation: leftcapanimate 1.5s cubic-bezier(.53,2,.17,1);
+    visibility: visible;
+}
+
+#slideshow figure.deactive {
+    z-index: 999;
+    -webkit-animation: deanimate 1s ease-out;
+    visibility: visible;
+}
+
+#slideshow figure.leftdeactive {
+    z-index: 999;
+    -webkit-animation: leftdeanimate 1s ease-out;
+    visibility: visible;
+}
+
+figcaption {
+    position: fixed;
+    top: 200px;
+    right: 200px;
+    width: 480px;
+}
+
+h2 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    color: black;
+    background-color: rgba(255,255,255,0.7);
+    padding: 3.5% 2% 3.5% 2%;
+    display: inline-block;
+    font-size: 5.4rem;
+    font-weight: 400;
+}
+
+h3 {
+    position: absolute;
+    left: 170px;
+    top: 88px;
+    color: white;
+    background-color: rgba(0,0,0,0.8);
+    padding: .77% 2% .7% 2%;
+    font-size: 2.5rem;
+    display: inline-block;
+}
+
+menu {
+    width: 100%;
+    height: 100%;
+     z-index: 1001;
+     position: absolute;
+}
+
+menu a.left {
+    width: 50%;
+    height: 100%;
+    float: left;
+    cursor: url(/css/assets/left2.cur), auto;
+    opacity: .1;
+    z-index: 1001;
+}
+
+menu a.right {
+    width: 50%;
+    height: 100%;
+    cursor: url(/css/assets/right2.cur), auto;
+    float: right;
+    opacity: .1;
+    z-index: 1002;
+}
+
+
+#content {
+    background-color: rgba(0, 0, 0, 0.7);
+    background-image: url(/css/assets/castello.png);
+    width: 72rem;
+    height: 12rem;
+    bottom: 0;
+    left: 10vw;
+    position: fixed;
+    overflow: hidden;
+    -webkit-transition: all .5s ease;
+}
+
+
+#content.active {
+    height: 70.5rem;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+ 
+::-webkit-scrollbar-track {
+    background-color: #000;
+}
+ 
+::-webkit-scrollbar-thumb {
+    background-color: #fff;
+}
+
+main {
+    margin: 2rem;
+    padding: 2rem;    
+    overflow: hidden;
+    height: 45.5rem;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+main.success {
+    overflow: auto;
+}
+
+main.loading {
+    background-image: url(/css/assets/loading.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 17rem;
+    overflow: hidden;
+}
+
+main.animating {    
+    /*overflow: hidden;*/
+}
+
+
+main.error {
+    background-image: url(/css/assets/error.gif);
+    background-repeat: no-repeat;
+    background-position: center 45%;
+}
+
+main * {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+    -webkit-transition: all .5s ease .02s;
+}
+
+main.loading * {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+    -webkit-transition: all .5s ease .5s;
+}
+
+main.success * {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+    -webkit-transition: all .5s ease .02s;
+}
+
+header {
+    padding: 2rem 4rem 2rem 4rem;
+    position: relative;
+    -webkit-transition: all .5s ease;
+}
+
+#content.active header {
+}
+
+header h1 {
+    font-size: 7.2rem;
+    font-weight: 100;
+    cursor: pointer;
+    display: inline-block;
+}
+
+
+
+article a {
+    display: inline;
+}
+
+article p {
+    margin: 2% 0;
+    padding: 0 1rem 0 1rem;
+}
+
+
+main a,
+main a:visited,
+main a:active {
+    color: white;
+}
+
+
+
+header img {
+    width: 4.4rem;
+    float: right;
+    margin: 3.5rem 1rem 4rem 0;
+    -webkit-transition: -webkit-transform .5s ease;
+}
+
+#content.active header img {
+     -webkit-transform: rotate(180deg);
+}
+
+
+a {
+    cursor: pointer;
+}
+
+nav {
+    margin: 2rem 2rem 0 2rem;
+}
+
+nav a {
+    display: inline-block;
+    font-size: 2.2rem;
+    font-weight: 100;
+    margin: 0 1% 0 1%;
+    -webkit-transition: all .5s ease;
+}
+
+
+nav a.active {
+    -webkit-transition: all .5s ease;
+    text-shadow: 0px 0px 2px white, 0px 0px 10px white, 0px 0px 10px white;
+}
+
+nav a:hover {
+    -webkit-transition: all .3s ease;
+    text-shadow: 0px 0px 2px white, 0px 0px 10px white;
+}
+
+nav a.active:hover {
+    -webkit-transition: all .5s ease;
+    text-shadow: 0px 0px 2px white, 0px 0px 10px white, 0px 0px 10px white;
+}
+
+footer {
+    display: inline-block;
+    position: fixed;
+    right: 10px;
+    bottom: 0;
+    font-size: 1.2rem;
+    padding: .5%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+
+
+
+
+
+
+
+/*Contact*/
+
+form {
+    color: white;
+    padding: 5% 10% 5% 10%;
+    width: 80%;
+    text-align: right;
+}
+
+input, textarea {
+    outline: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    border: 2px solid white;
+    background-color: transparent;
+    width: 100%;
+    display: inline-block;
+}
+
+input[type="text"], input[type="email"], textarea {
+    padding: .5rem 1rem .5rem 1rem;
+    margin: 2% 0 2% 0;
+}
+
+input[type="submit"] {
+    padding: 0;
+    margin: 0;
+    width: auto;
+}
+
+textarea {
+    resize: vertical;
+    /*max-width: 420px;*/
+    max-height: 320px;
+    height: 150px;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 94%;
+    box-shadow: inset 0 0 10px black;
+}
+
+input[type="submit"] {
+    padding: 0 0 0 0;
+    display: inline;
+    border: none;
+    font-size: 2em;
+}
+
+input[type=text], input[type=email], input[type=submit], textarea {
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    font-family: inherit;
+    font-size: 2rem;
+}
+
+input[type="email"]:focus, input[type="text"]:focus, textarea:focus {
+    box-shadow: 0px 0px 10px white;
+}
+
+input[type="email"]:hover, input[type="text"]:hover, textarea:hover {
+    box-shadow: 0px 0px 10px white;
+}
+
+input[type="submit"]:hover {
+    text-shadow: 0px 0px 2px white, 0px 0px 10px white;
+}
+
+input[type="submit"]:active {
+    text-shadow: 0px 0px 2px white, 0px 0px 10px white, 0px 0px 10px white;
+}
+
+input[type="submit"]:focus {
+    text-shadow: 0px 0px 2px white, 0px 0px 10px white, 0px 0px 10px white;
+}
+
+::-webkit-input-placeholder {
+    color: white;
+}
+
+:-moz-placeholder {
+    color: white;
+}
+
+::-moz-placeholder {
+    color: white;
+}
+
+:-ms-input-placeholder {
+    color: white;
+}
+
+
+
+
+
+
+
+
+/*MENU*/
+ul {
+    list-style: none;
+    margin: 0 1rem 0 1rem;
+}
+
+.Meny li {
+    margin: 2% 0;
+}
+
+.Meny header {
+    padding: 0 !important;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.Meny p {
+    font-size: 1.4rem;
+    float: left;
+    padding: 0 .5rem 0 0;
+}
+
+.Meny div {
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 1.4rem;
+}
+
+.Meny div:before {
+    content: "...................................................................................................................................................................";
+}
+
+.Meny span {
+    font-size: 1.4rem;
+    float: right;
+    padding: 0 0 0 .2rem;
+}
+
+
+
+
+
+
+
+
+
+/*OPENNING*/
+th {
+    text-align: right;
+}
+
+
+
+
+
+
+
+/*PLACE*/
+.map {
+    
+    background-position: center center;
+    width: 98%;
+    height: 100%; 
+    background-color: white;
+    cursor: pointer;
+    /*border: .6px solid black;*/
+    border: 2px solid white;
+    box-shadow: inset 0 0 5px black;
+    background-image: url(http://a.tiles.mapbox.com/v3/illusinfo.map-z87bx5d0/15.586059093475342,56.16114597769922,15/500x300.png);
+}
+.Plats a {
+    width: 98%;
+    height: 60%;
+    margin: 2% 0;
+padding: 0 1rem 0 1rem;
+    
+}
+
+table {
+    padding: 2% 5% 2% 5%;
+}
+
+th{
+    text-align: right;
+}
+
+th:after{
+    content: ": ";
+}
